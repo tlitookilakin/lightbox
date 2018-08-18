@@ -21,7 +21,7 @@ Additionally, any element containing images may have this attribute set to "grou
 ### data-altsrc attribute
 If this attribute is included on an image, it will use this value as the URL for the "full-sized" version of the image, allowing you to use smaller or cropped versions of an image on the page and display the full version when viewed in the lightbox.
 ### adding image information/captions
-This relies on the presence of a <figcaption> element, and will treat its contents as an image caption. The relevant <figcaption> element must be placed directly following the corresponding image if it is an individual caption and not a group caption. For group captions, the images should be placed together in a <figure>, and the corresponding <figcaption> should be either the first or last element in the <figure>.
+This relies on the presence of a `<figcaption>` element, and will treat its contents as an image caption. The relevant `<figcaption>` element must be placed directly following the corresponding image if it is an individual caption and not a group caption. For group captions, the images should be placed together in a `<figure>`, and the corresponding `<figcaption>` should be either the first or last element in the `<figure>`.
   
 ## Additional notes:
 Keyboard navigation of image groups also works. you can use the A/D and LEFT/RIGHT keys to navigate them.
