@@ -300,16 +300,31 @@ function setupLightbox(targetElement,ignoreClasses,showMeta,showTitles){
 	for(let a of imgs){
 		if(!isIgnored(a)){
 			if(("lightbox" in a.dataset) && a.dataset.lightbox=="group"){
-				for(let b of a.getElementsByTagName("img")){
-					b.dataset.grouped="true";
-					b.igrouper=a;
+				if(a.tagName=="IMG"){
+					a.addEventListener("click",function(event){ 
+						showLightBox(this);event.stopPropagation();
+					});
+					console.warn("GROUP typing may NOT be used on images!");
+				} else {
+					for(let b of a.getElementsByTagName("img")){
+						if("grouped" in b.dataset){
+							console.warn("You have intersecting image groups! Problems may occur!");
+						}
+						if(!("lightbox" in b.dataset)||b.dataset.lightbox!="panorama"){
+							b.dataset.grouped="true";
+							b.igrouper=a;
+						}
+					}
 				}
 			} else {
-				a.addEventListener("click",function(event){ 
-					showLightBox(this);event.stopPropagation();
-				});
+				if(a.tagName=="IMG"){
+					a.addEventListener("click",function(event){ 
+						showLightBox(this);event.stopPropagation();
+					});
+				} else {
+					console.warn("Could not add non-image to lightbox!");
+				}
 			}
-		}
 	}
 	window.addEventListener("resize",rescalePano);
 }
