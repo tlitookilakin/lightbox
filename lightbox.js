@@ -325,6 +325,7 @@ function setupLightbox(targetElement,ignoreClasses,showMeta,showTitles){
 					console.warn("Could not add non-image to lightbox!");
 				}
 			}
+		}
 	}
 	window.addEventListener("resize",rescalePano);
 }
