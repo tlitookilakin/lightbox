@@ -1,4 +1,5 @@
 function setupLightbox(targetElement,ignoreClasses,showMeta,showTitles){
+document.addEventListener("DOMContentLoaded",function(){
 	/* - vars - */
 	let group=[];
 	let gind=0;
@@ -328,4 +329,5 @@ function setupLightbox(targetElement,ignoreClasses,showMeta,showTitles){
 		}
 	}
 	window.addEventListener("resize",rescalePano);
+});
 }
